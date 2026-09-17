@@ -3,7 +3,8 @@ const port = 3030;
 const app = express();
 
 const {getHello, getKonyvek,
-    getKonyvbyId
+    getKonyvbyId,
+    createKonyv
 
 } = require("./services/konyv_service")
 
@@ -25,7 +26,13 @@ app.get("/konyvek", getKonyvek);
 app.get("/konyvek/:id", getKonyvbyId);
 
 
-// adatfelvétel: 
+// adatfelvétel
+// POST kérés
+// request.body --> önmagában a végpont nem tudja mi ez. Ezért kell express.json())
+// app.use(express.json()) --> megmondja, hogy json fogadjuk az adatokat
+
+app.post("/ujkonyv", createKonyv);
+
 
 app.listen(port, () => {
     console.log(`AAAAAAAAAAAAA SZERVER FUT A ${port} on.`);

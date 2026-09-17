@@ -16,8 +16,27 @@ const getKonyvbyId = (req, res) => {
     const {id} = req.params;*/
 }
 
+
+
+const createKonyv = (req, res) => {
+    /**{
+id: 14,
+title: "A Da Vinci-kód",
+author: "Dan Brown",
+category: "Krimi",
+year: 2003,
+pages: 608,
+price: 4590,
+views: 2900
+},*/
+
+    //const {id, title, author, catgeory, year, pages, views} = req.body;
+    console.log(req.body);
+}
+
 module.exports = {
     getHello,
     getKonyvek,
-    getKonyvbyId
+    getKonyvbyId,
+    createKonyv
 }
